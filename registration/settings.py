@@ -1,5 +1,8 @@
 # Django settings for registration project.
 
+BROKER_BACKEND = 'django'
+
+import djcelery
 import dj_database_url
 
 DEBUG = True
@@ -12,7 +15,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-        'default': dj_database_url.config(default='postgres://localhost')
+        'default': dj_database_url.config(default='postgres://localhost/hsmum')
 }
 
 # Local time zone for this installation. Choices can be found here:
@@ -115,6 +118,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'gunicorn',
+    'kombu.transport.django',
+    'djcelery',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -145,3 +150,5 @@ LOGGING = {
         },
     }
 }
+
+djcelery.setup_loader()
