@@ -1,2 +1,1 @@
-web: gunicorn registration.wsgi -b 0.0.0.0:$PORT
-celeryd: python manage.py celeryd -E -B --loglevel=INFO
+web: gunicorn hackmum.wsgi -b 0.0.0.0:$PORT
