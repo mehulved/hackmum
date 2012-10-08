@@ -1,4 +1,4 @@
-# Django settings for registration project.
+# Django settings for hackmum project.
 
 BROKER_BACKEND = 'django'
 
@@ -22,7 +22,7 @@ DATABASES = {
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Kolkata'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -76,7 +76,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'txr%vam(1@y#uj=)e*y+4dt-evm-6+faa_w=7t4-z$!((rn*!k'
+SECRET_KEY = '6+y-1+-%zi+_s5&amp;w#a@qrdm+y10tpcszbq60iit_h-@r49(qdk'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -95,10 +95,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'registration.urls'
+ROOT_URLCONF = 'hackmum.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'registration.wsgi.application'
+WSGI_APPLICATION = 'hackmum.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
