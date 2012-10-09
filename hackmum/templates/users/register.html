@@ -1,0 +1,25 @@
+{% if event_id %}
+    <form>
+        <p>
+            <label for="fullname">FullName <input type="text" name="fullname_input" id="fullname" value="Enter your full name"></label>
+        </p>
+        <p>
+            <label for="email">Email <input type="text" name="email" id="email_input" value="Enter your Email Address"></label>
+        </p>
+        <p>
+            <label for="twitter">Twitter <input type="text" id="twitter_input" name="twitter" value="Enter your Twitter handle"></label>
+        </p>
+        <p>
+            <label for="facebook">Facebook <input type="text" name="facebook" id="facebook_input" value="Enter your Facebook username"></label>
+        </p>
+        <p>
+            <label for="github">Github <input type="text" name="github" id="github_input" value="Enter your github username"></label>
+        </p>
+        <p>
+            <label for="geeklist">Geeklist <input type="text" name="geeklist" id="geeklist_input" value="Enter your geeklist username"></label>
+        </p>
+        <p>
+            <input type="submit" id="register_button" value="Register">
+        </p>
+    </form>
+{% endif %}
