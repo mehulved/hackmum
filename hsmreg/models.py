@@ -18,3 +18,5 @@ class Users(models.Model):
     github = models.CharField(max_length=20)
     geeklist = models.CharField(max_length=20)
 
+    def __unicode__(self):
+        return u'%s' % (self.fullname)
