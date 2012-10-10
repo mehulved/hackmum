@@ -20,7 +20,7 @@ def index(request):
     return render_to_response('events/index.html', {'event_list': event_list})
 
 def event_detail(request, event_id):
-    user_list = get_list_or_404(Users.objects.filter(event_id__exact=event_id))
+    user_list = Users.objects.filter(event_id__exact=event_id)
     return render_to_response('events/event_details.html', {'user_list': user_list, 'event_id': event_id})
 
 def users_detail(request, user_id):
