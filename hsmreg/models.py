@@ -6,6 +6,9 @@ class Event(models.Model):
     event_date = models.DateField()
     name = models.CharField(max_length=50)
 
+    def __unicode__(self):
+        return u'%s' % (self.name)
+
 class Users(models.Model):
     event = models.ForeignKey(Event)
     fullname = models.CharField(max_length=50)
