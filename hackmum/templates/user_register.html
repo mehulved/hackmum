@@ -1,0 +1,8 @@
+{% include "header.html" %}
+    {% if event_id %}
+    <form action="/event/{{event_id}}/user/register/" method="post">{% csrf_token %}
+            {{form.as_p}}
+            <input type="Submit" value="Register" />
+        </form>
+    {% endif %}
+{% include "footer.html" %}

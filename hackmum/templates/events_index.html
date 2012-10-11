@@ -1,0 +1,11 @@
+{% include "header.html" %}
+    {% if event_list %}
+      <ul>
+          {% for event in event_list %}
+          <li><a href="/event/{{event.id}}/">{{event.name}}</a></li>
+          {% endfor %}
+      </ul>
+    {% else %}
+        <p>No Events have been held as yet.</p>
+    {% endif %}
+{% include "footer.html" %}
