@@ -11,6 +11,7 @@ from django.template import RequestContext
 class RegisterForm(forms.Form):
     fullname = forms.CharField(max_length=50)
     email = forms.CharField(max_length=50)
+    contact_number = forms.CharField(max_length=15)
     twitter = forms.CharField(max_length=20)
     facebook = forms.CharField(max_length=20)
     github = forms.CharField(max_length=20)
@@ -35,12 +36,16 @@ def user_register(request, event_id):
             # process the data in form.cleaned_data
             fullname = form.cleaned_data['fullname']
             email = form.cleaned_data['email']
+            contact_number = form.cleaned_data['contact_number']
             twitter = form.cleaned_data['twitter']
             facebook = form.cleaned_data['facebook']
             github = form.cleaned_data['github']
             geeklist = form.cleaned_data['geeklist']
-            u = Users.objects.create(event_id=event_id,fullname=fullname, email=email, twitter=twitter, facebook=facebook, github=github, geeklist=geeklist)
+            u = Users.objects.create(event_id=event_id,fullname=fullname, email=email, contact_number=contact_number, twitter=twitter, facebook=facebook, github=github, geeklist=geeklist)
             return HttpResponseRedirect('/event/%s' % event_id)
     else:
         form = RegisterForm()
     return render(request,'user_register.html', {'event_id': event_id, 'form': form, 'event' : Event.objects.get(id=event_id)}, context_instance = RequestContext(request))
+
+def about(request):
+    return render_to_response('about.html', context_instance = RequestContext(request))

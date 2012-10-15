@@ -23,4 +23,5 @@ urlpatterns = patterns('',
     url(r'^event/(?P<event_id>\d+)/user/(?P<user_id>\d+)/$','hsmreg.views.users_detail'),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT,}),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
+    url(r'^about/$', 'hsmreg.views.about'),
 )
