@@ -22,11 +22,11 @@ def index(request):
 
 def event_detail(request, event_id):
     user_list = Users.objects.filter(event_id__exact=event_id)
-    return render_to_response('event_details.html', {'user_list': user_list, 'event_id': event_id})
+    return render_to_response('event_details.html', {'user_list': user_list, 'event_id': event_id}, context_instance = RequestContext(request))
 
 def users_detail(request, user_id, event_id):
     user_data = get_list_or_404(Users.objects.filter(id=user_id).filter(event_id=event_id))
-    return render_to_response('user_details.html', {'user_data': user_data, 'user_id': user_id})
+    return render_to_response('user_details.html', {'user_data': user_data, 'user_id': user_id}, context_instance = RequestContext(request))
 
 def user_register(request, event_id):
     if request.method == 'POST':
@@ -43,4 +43,4 @@ def user_register(request, event_id):
             return HttpResponseRedirect('/event/%s' % event_id)
     else:
         form = RegisterForm()
-    return render(request,'user_register.html', {'event_id': event_id, 'form': form})
+    return render(request,'user_register.html', {'event_id': event_id, 'form': form}, context_instance = RequestContext(request))
