@@ -1,11 +1,15 @@
 {% include "header.html" %}
     <div id="main">
-        {% if event_id %}
-        <form class="user-register" action="/event/{{event_id}}/user/register/" method="post">{% csrf_token %}
-            <h3>Register for {{event.name}}</h3>
-            {{form.as_p}}
-            <input type="Submit" value="Register" />
-            </form>
+        {% if event.active %}
+            {% if event_id %}
+            <form class="user-register" action="/event/{{event_id}}/user/register/" method="post">{% csrf_token %}
+                <h3>Register for {{event.name}}</h3>
+                {{form.as_p}}
+                <input type="Submit" value="Register" />
+                </form>
+            {% endif %}
+        {% else %}
+            <h3>This event's registration is closed.</h3>
         {% endif %}
     </div>
 {% include "footer.html" %}
