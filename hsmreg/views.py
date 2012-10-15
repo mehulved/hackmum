@@ -43,4 +43,4 @@ def user_register(request, event_id):
             return HttpResponseRedirect('/event/%s' % event_id)
     else:
         form = RegisterForm()
-    return render(request,'user_register.html', {'event_id': event_id, 'form': form}, context_instance = RequestContext(request))
+    return render(request,'user_register.html', {'event_id': event_id, 'form': form, 'event' : Event.objects.get(id=event_id)}, context_instance = RequestContext(request))
