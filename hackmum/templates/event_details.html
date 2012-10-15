@@ -1,12 +1,14 @@
 {% include "header.html" %}
-    {% if user_list %}
-        <ul>
-            {% for user in user_list %}
-            <li><a href="/event/{{event_id}}/user/{{user.id}}/">{{user.fullname}}</a></li>
-            {% endfor %}
-        </ul>
-        <p> Click <a href="/event/{{event_id}}/user/register/">here</a> to register for the event.</p>
-    {% else %}
-        <p>No users registered as yet. Click <a href="/event/{{event_id}}/user/register/">here</a> to register.</p>
-    {% endif %}
+    <div id="main">
+        {% if user_list %}
+            <ul>
+                {% for user in user_list %}
+                <li><a href="/event/{{event_id}}/user/{{user.id}}/">{{user.fullname}}</a></li>
+                {% endfor %}
+            </ul>
+            <p> Click <a href="/event/{{event_id}}/user/register/">here</a> to register for the event.</p>
+        {% else %}
+            <p>No users registered as yet. Click <a href="/event/{{event_id}}/user/register/">here</a> to register.</p>
+        {% endif %}
+    </div>
 {% include "footer.html" %}

@@ -1,11 +1,14 @@
 {% include "header.html" %}
-    {% if event_list %}
-      <ul>
-          {% for event in event_list %}
-          <li><a href="/event/{{event.id}}/">{{event.name}}</a></li>
-          {% endfor %}
-      </ul>
-    {% else %}
-        <p>No Events have been held as yet.</p>
-    {% endif %}
+    <div id="main">
+        <h2 class="title">HackerSpace Mumbai Events</h2>
+        {% if event_list %}
+          <ul id="events-list">
+              {% for event in event_list %}
+              <li><a href="/event/{{event.id}}/">{{event.name}}</a></li>
+              {% endfor %}
+          </ul>
+        {% else %}
+            <p>No Events have been held as yet.</p>
+        {% endif %}
+    </div>
 {% include "footer.html" %}
